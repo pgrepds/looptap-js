@@ -6,6 +6,7 @@ $(() => {
     var radiusArc = 250
     var startAngle = 2.8 * Math.PI
     var endAngle = 3.9 * Math.PI
+
     var counterClockwise = false
 
     var movCanvas = $('#movCanvas')[0]
@@ -36,7 +37,7 @@ $(() => {
         ctx.beginPath()
         ctx.arc(x, y, radiusArc, startAngle, endAngle, counterClockwise)
         ctx.lineWidth = 60
-        ctx.strokeStyle = '#F08080'
+        ctx.strokeStyle = '#FF6A6A'
         ctx.stroke()
 
         angle += speed
