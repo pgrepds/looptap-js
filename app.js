@@ -37,18 +37,18 @@ $(() => {
                 $('#score').html(score)
                 speed += 0.001
 
-                const random = (i, j) => Math.floor(Math.random() * (j - i)) + i;
-                arc = [];
-                arc.push(random(0, 300));
-                arc.push(random(arc[0] + 10, arc[0] + 110));
-                arc[1] = arc[1] > 360 ? 360 : arc[1];
-
                 randomInDegree = Math.floor(Math.random() * 300)
                 startAngle = randomInDegree * (Math.PI / 180)
                 endAngle = (Math.floor(Math.random() * (randomInDegree + 110) - (randomInDegree + 10)) + (randomInDegree + 10)) * (Math.PI / 180)
                 endAngle = endAngle > 360 ? 360 : endAngle
                 ctx.clearRect(0, 0, canvas.width, canvas.height)
             } else {
+                var bestScore = localStorage.getItem('score')
+                if (bestScore < score) {
+                    localStorage.setItem('score', score)
+                }
+                $('#bestScore').html(bestScore)
+                $('.bestScoreCount').toggleClass('hidden')
                 cancelAnimationFrame(animationFrame)
             }
         }

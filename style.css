@@ -40,6 +40,20 @@
     align-items: center;
 }
 
+.bestScoreCount {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+#bestScore {
+    font-size: 30px;
+}
+
 #score {
     font-size: 30px;
 }
