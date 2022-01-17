@@ -27,6 +27,11 @@ $(() => {
     var score = 0
     var animationFrame
 
+    $('.play-button').on('click', event => {
+        $('.play-button').css('visibility', 'hidden')
+        animationFrame = animate()
+    })
+
     $(document).on('keydown', event => {
         event.preventDefault()
         event.stopPropagation()
@@ -47,12 +52,17 @@ $(() => {
                 if (bestScore < score) {
                     localStorage.setItem('score', score)
                 }
+                $('.play-button').css('visibility', 'visible')
                 $('#bestScore').html(bestScore)
                 $('.bestScoreCount').toggleClass('hidden')
                 cancelAnimationFrame(animationFrame)
             }
         }
     })
+
+    function animate() {
+        return requestAnimationFrame(draw)
+    }
 
     function draw() {
         ctx.beginPath()
@@ -68,7 +78,10 @@ $(() => {
         movCtx.arc(centerX, centerY, radius, 0, 2 * Math.PI, false)
         movCtx.fillStyle = '#2F4F4F'
         movCtx.fill()
-        animationFrame = requestAnimationFrame(draw)
+        if (animationFrame) {
+            animationFrame = animate()
+        }
     }
+
     draw()
 })
