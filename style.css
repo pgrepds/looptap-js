@@ -36,14 +36,13 @@
 
 .scoreCount {
     display: flex;
-    flex-direction: row;
     align-items: center;
 }
 
 .bestScoreCount {
     display: flex;
-    flex-direction: row;
     align-items: center;
+    margin-top: -20;
 }
 
 .hidden {
@@ -56,6 +55,10 @@
 
 #score {
     font-size: 30px;
+}
+
+.zeroMargin {
+    margin: 0;
 }
 
 h1 {
