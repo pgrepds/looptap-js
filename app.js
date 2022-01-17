@@ -29,6 +29,7 @@ $(() => {
 
     $('.play-button').on('click', event => {
         $('.play-button').css('visibility', 'hidden')
+        $('.bestScoreCount').css('visibility', 'hidden')
         animationFrame = animate()
     })
 
@@ -54,7 +55,7 @@ $(() => {
                 }
                 $('.play-button').css('visibility', 'visible')
                 $('#bestScore').html(bestScore)
-                $('.bestScoreCount').toggleClass('hidden')
+                $('.bestScoreCount').css('visibility', 'visible')
                 cancelAnimationFrame(animationFrame)
             }
         }
