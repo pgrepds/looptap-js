@@ -1,5 +1,4 @@
 .mainView {
-    position: relative;
     text-align: center;
 }
 
@@ -23,6 +22,18 @@
 
 .scoreView {
     flex-direction: column;
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: 250px;
+    z-index: 2;
+}
+
+.startTutorial {
+    font-size: medium;
+}
+
+.playground {
+    display: flex;
 }
   
 .play-button {
@@ -35,14 +46,12 @@
 }
 
 .scoreCount {
-    display: flex;
     align-items: center;
 }
 
 .bestScoreCount {
     display: flex;
     align-items: center;
-    margin-top: -20;
 }
 
 #bestScore {
@@ -53,8 +62,13 @@
     font-size: 30px;
 }
 
+.scoreMargin {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .zeroMargin {
-    margin: 0;
+    margin: 0px;
 }
 
 h1 {

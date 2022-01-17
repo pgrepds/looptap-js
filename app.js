@@ -30,13 +30,15 @@ $(() => {
     $('.play-button').on('click', event => {
         $('.play-button').css('visibility', 'hidden')
         $('.bestScoreCount').css('visibility', 'hidden')
+        score = 0
+        $('#score').html(score)
         animationFrame = animate()
     })
 
     $(document).on('keydown', event => {
         event.preventDefault()
         event.stopPropagation()
-        if (event.code == 'Space') {
+        if (event.code == 'Space' && animationFrame) {
             if (ctx.isPointInPath(centerX, centerY)) {
 
                 score += 1

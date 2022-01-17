@@ -8,23 +8,24 @@
         <script src="lib/jquery-3.6.0.min.js"></script>
         <script src="app.js" charset="UTF-8"></script>
     </head>
-
     <body>
         <div class="mainView">
             <h1>Looptap-JS</h1>
-            <canvas id="mainCanvas" width="800" height="800"></canvas>
-            <canvas id="movCanvas" width="800" height="800"></canvas>
-        </div>
-        <div class="scoreView">
-            <div class="play-button"></div>
-            <div class="scoreCount">
-                <h3 class="zeroMargin">Score:</h3>        
-                <div id="score">0</div>
+            <div class="startTutorial">press 'space' when the ball is on the colored area.</div> 
+            <div class="playground">
+                <div class="scoreView">
+                    <div class="scoreCount scoreMargin">
+                        <div id="score">0</div>
+                    </div>
+                    <div class="play-button"></div>
+                    <div class="bestScoreCount scoreMargin">
+                        <h3 class="zeroMargin">Best:</h3>
+                        <div id="bestScore">0</div>
+                    </div>
+                </div>
+                <canvas id="mainCanvas" width="800" height="800"></canvas>
+                <canvas id="movCanvas" width="800" height="800"></canvas>
             </div>
-            <div class="bestScoreCount">
-                <h3 class="zeroMargin">Best score:</h3>
-                <div id="bestScore">0</div>
-            </div> 
         </div>
     </body>
 </html>
