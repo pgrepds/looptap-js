@@ -3,13 +3,13 @@ $(() => {
     var ctx = canvas.getContext('2d')
     var x = 400
     var y = 400
-    var radius = 250
+    var radiusArc = 250
     var startAngle = 2.8 * Math.PI
     var endAngle = 3.9 * Math.PI
     var counterClockwise = false
 
     ctx.beginPath()
-    ctx.arc(x, y, radius, startAngle, endAngle, counterClockwise)
+    ctx.arc(x, y, radiusArc, startAngle, endAngle, counterClockwise)
     ctx.lineWidth = 60
     ctx.strokeStyle = '#98FB98'
     ctx.stroke()
@@ -19,11 +19,11 @@ $(() => {
     var centerX = 0
     var centerY = 400
     var radius = 7
-    var angle = 1
+    var angle = 0.05
 
     function rotate(angle) {
-        centerX = centerX + radius * Math.cos(angle)
-        centerY = centerY + radius * Math.cos(angle)
+        centerX = x + radiusArc * Math.cos(angle)
+        centerY = y + radiusArc * Math.sin(angle)
     }
 
     $(document).on('keydown', event => {
@@ -33,7 +33,7 @@ $(() => {
         }
     })
 
-    var intervalTime = 10
+    var intervalTime = 1
 
     setInterval(function () {
         angle = (angle + Math.PI / 360) % (Math.PI * 2)
