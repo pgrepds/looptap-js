@@ -31,6 +31,7 @@ $(() => {
         $('.play-button').css('visibility', 'hidden')
         $('.bestScoreCount').css('visibility', 'hidden')
         score = 0
+        speed = 0.05
         $('#score').html(score)
         animationFrame = animate()
     })
@@ -47,7 +48,7 @@ $(() => {
 
                 randomInDegree = Math.floor(Math.random() * 300)
                 startAngle = randomInDegree * (Math.PI / 180)
-                endAngle = (Math.floor(Math.random() * (randomInDegree + 110) - (randomInDegree + 10)) + (randomInDegree + 10)) * (Math.PI / 180)
+                endAngle = (Math.floor(Math.random() * (randomInDegree + 110) - (randomInDegree + 80)) + (randomInDegree + 80)) * (Math.PI / 180)
                 endAngle = endAngle > 360 ? 360 : endAngle
                 ctx.clearRect(0, 0, canvas.width, canvas.height)
             } else {
