@@ -1,11 +1,13 @@
 $(() => {
+    var ax = 2.8
+    var ay = 3.9
     var canvas = $('#mainCanvas')[0]
     var ctx = canvas.getContext('2d')
     var x = 400
     var y = 400
     var radiusArc = 250
-    var startAngle = 2.8 * Math.PI
-    var endAngle = 3.9 * Math.PI
+    var startAngle = ax * Math.PI
+    var endAngle = ay * Math.PI
 
     var counterClockwise = false
 
@@ -24,9 +26,14 @@ $(() => {
 
     $(document).on('keydown', event => {
         event.preventDefault()
+        event.stopPropagation()
         if (event.code == 'Space') {
             if (ctx.isPointInPath(centerX, centerY)) {
-                console.log("match1")
+                ax = Math.random()
+                ay = Math.random()
+                startAngle = ax * Math.PI
+                endAngle = ay * Math.PI
+                ctx.clearRect(0, 0, canvas.width, canvas.height)
             }
         }
     })
@@ -42,7 +49,7 @@ $(() => {
 
         angle += speed
         rotate(angle)
-        movCtx.clearRect(0, 0, canvas.width, canvas.height)
+        movCtx.clearRect(0, 0, movCanvas.width, movCanvas.height)
         movCtx.beginPath()
         movCtx.arc(centerX, centerY, radius, 0, 2 * Math.PI, false)
         movCtx.fillStyle = '#2F4F4F'
