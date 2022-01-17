@@ -1,4 +1,5 @@
 .mainView {
+    position: relative;
     text-align: center;
 }
 
@@ -18,4 +19,35 @@
     margin-left: auto; 
     margin-right: auto;
     z-index: 1;
+}
+
+.scoreView {
+    flex-direction: column;
+}
+  
+.play-button {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 2.5em 0 2.5em 5em;
+    border-color: transparent transparent transparent #000;
+    opacity: .75; 
+}
+
+.scoreCount {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#score {
+    font-size: 30px;
+}
+
+h1 {
+    font-size: 60px;
+}
+
+h3 {
+    font-size: 30px;
 }

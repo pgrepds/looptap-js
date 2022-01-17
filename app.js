@@ -9,7 +9,7 @@ $(() => {
     var startAngle = ax * Math.PI
     var endAngle = ay * Math.PI
 
-    var counterClockwise = false
+    var counterClockwise = true
 
     var movCanvas = $('#movCanvas')[0]
     var movCtx = movCanvas.getContext('2d')
@@ -34,7 +34,7 @@ $(() => {
             if (ctx.isPointInPath(centerX, centerY)) {
 
                 score += 1
-
+                $('#score').html(score)
                 speed += 0.001
 
                 const random = (i, j) => Math.floor(Math.random() * (j - i)) + i;
